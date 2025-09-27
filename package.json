@@ -11,7 +11,7 @@
   "scripts": {
     "dev": "vite",
     "test": "vitest",
-    "build": "tsc -b && vite build",
+    "build": "rm -rf dist && tsc && vite build",
     "lint": "eslint --fix src/**/* --report-unused-disable-directives --max-warnings 0 --no-warn-ignored -f codeframe",
     "format": "prettier src/**/* --write --ignore-unknown",
     "preview": "vite preview",
@@ -47,6 +47,7 @@
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.34.1",
     "vite": "^7.0.0",
+    "vite-plugin-dts": "^4.5.4",
     "vitest": "^3.2.4"
   }
 }
