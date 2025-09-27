@@ -1,7 +1,48 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
+  "compilerOptions": {
+    // Target modern JS for libraries
+    "target": "ESNext",
+    "module": "ESNext",
+
+    // Include standard libs for browser + latest features
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+
+    // JSX transform
+    "jsx": "react-jsx",
+
+    // Type checking strict mode
+    "strict": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": true,
+
+    // Module interop
+    "moduleResolution": "bundler",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "isolatedModules": true,
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "useDefineForClassFields": true,
+
+    // Allow JSON imports
+    "resolveJsonModule": true,
+
+    // Declaration files
+    "declaration": true,
+    "declarationMap": true,
+
+    // Don't emit JS (Vite handles transpilation)
+    "noEmit": true,
+
+    // Include Vite types
+    "types": ["vite/client"]
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.test.tsx"]
 }

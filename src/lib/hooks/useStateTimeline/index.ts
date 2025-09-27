@@ -34,7 +34,7 @@ const useStateTimeline = <T>(initialState: T) => {
       throw new Error('Index out of bounds');
     }
     indexRef.current = index;
-    setInnerState(timelineRef.current[index].value);
+    setInnerState(timelineRef.current[index]!.value);
   }
 
   function undo() {
