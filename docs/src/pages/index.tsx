@@ -97,7 +97,7 @@ export default function Home(): ReactNode {
           <div className={styles.buttons}>
             <Link
               className="button button--secondary button--lg"
-              to="/docs/intro"
+              to="/docs/introduction"
             >
               Get Started
             </Link>
