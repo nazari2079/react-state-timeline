@@ -9,7 +9,7 @@
     "url": "https://github.com/nazari2079"
   },
   "scripts": {
-    "dev": "vite",
+    "start:docs": "cd docs && yarn start",
     "test": "vitest",
     "build": "rm -rf dist && tsc && vite build",
     "lint": "eslint --fix lib/**/* --report-unused-disable-directives --max-warnings 0 --no-warn-ignored -f codeframe",
@@ -49,5 +49,9 @@
     "vite": "^7.0.0",
     "vite-plugin-dts": "^4.5.4",
     "vitest": "^3.2.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nazari2079/react-state-timeline"
   }
 }
