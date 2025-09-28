@@ -21,3 +21,18 @@
   align-items: center;
   justify-content: center;
 }
+
+.exmapleButtonsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.timelineContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
