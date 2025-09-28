@@ -73,7 +73,7 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
-      copyright: 'Copyright © 2025 react-state-timeline, nazari2079.',
+      copyright: 'Copyright © 2025 react-state-timeline, @nazari2079.',
     },
     prism: {
       theme: prismThemes.github,
