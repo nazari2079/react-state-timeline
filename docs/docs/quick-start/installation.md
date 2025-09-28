@@ -4,7 +4,7 @@ title: Installation
 sidebar_position: 1
 ---
 
-To start using the React State Timeline, simply install the package using your preferred package manager.
+To start using the **React State Timeline**, simply install the package using your preferred package manager.
 
 ```bash
 npm install react-state-timeline
