@@ -50,7 +50,7 @@ After installing the package, you can use it like this:
 
 ```tsx
 import React from 'react';
-import useStateTimeline from 'react-state-timeline';
+import { useStateTimeline } from 'react-state-timeline';
 
 export default function CounterDemo() {
   const { state, setState, timeline, currentIndex, undo, redo, canUndo, canRedo, reset } =
