@@ -2,12 +2,12 @@ import { useRef, useState } from 'react';
 
 interface Timeline<T> {
   value: T;
-  createdAt: Date;
+  date: Date;
 }
 
 const useStateTimeline = <T>(initialState: T) => {
   const [state, setInnerState] = useState(initialState);
-  const timelineRef = useRef<Timeline<T>[]>([{ value: initialState, createdAt: new Date() }]);
+  const timelineRef = useRef<Timeline<T>[]>([{ value: initialState, date: new Date() }]);
   const indexRef = useRef(0);
   const canUndo = indexRef.current > 0;
   const canRedo = indexRef.current < timelineRef.current.length - 1;
@@ -16,7 +16,7 @@ const useStateTimeline = <T>(initialState: T) => {
     if (indexRef.current < timelineRef.current.length - 1) {
       timelineRef.current = timelineRef.current.slice(0, indexRef.current + 1);
     }
-    timelineRef.current.push({ value, createdAt: new Date() });
+    timelineRef.current.push({ value, date: new Date() });
     indexRef.current = timelineRef.current.length - 1;
   }
 
@@ -52,7 +52,7 @@ const useStateTimeline = <T>(initialState: T) => {
   }
 
   function reset() {
-    timelineRef.current = [{ value: initialState, createdAt: new Date() }];
+    timelineRef.current = [{ value: initialState, date: new Date() }];
     indexRef.current = 0;
     setInnerState(initialState);
   }
