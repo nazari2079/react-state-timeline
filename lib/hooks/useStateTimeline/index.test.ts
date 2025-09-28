@@ -9,7 +9,7 @@ describe('useStateTimeline', () => {
     expect(result.current.timeline.length).toBe(1);
     expect(result.current.currentIndex).toBe(0);
     expect(result.current.timeline[0].value).toBe(0);
-    expect(result.current.timeline[0].createdAt).toBeInstanceOf(Date);
+    expect(result.current.timeline[0].date).toBeInstanceOf(Date);
   });
 
   it('sets state and updates timeline', () => {
@@ -22,7 +22,7 @@ describe('useStateTimeline', () => {
     expect(result.current.currentIndex).toBe(2);
     expect(result.current.timeline.map((t) => t.value)).toEqual([0, 1, 2]);
     result.current.timeline.forEach((entry) => {
-      expect(entry.createdAt).toBeInstanceOf(Date);
+      expect(entry.date).toBeInstanceOf(Date);
     });
   });
 
