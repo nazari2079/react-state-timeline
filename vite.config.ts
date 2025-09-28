@@ -6,7 +6,7 @@ import { resolve, sep } from 'node:path';
 
 import { name, peerDependencies } from './package.json';
 
-const libDir = resolve(__dirname, './src/lib');
+const libDir = resolve(__dirname, './lib');
 
 const findEntries = (dir: string) => {
   const entries: Record<string, string> = {};
@@ -40,7 +40,7 @@ export default defineConfig({
   plugins: [
     react(),
     dts({
-      entryRoot: 'src/lib',
+      entryRoot: 'lib',
       tsconfigPath: './tsconfig.json',
       exclude: ['**/*.test.ts', '**/*.test.tsx'],
     }),

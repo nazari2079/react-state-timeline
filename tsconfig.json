@@ -43,6 +43,6 @@
     // Include Vite types
     "types": ["vite/client"]
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "include": ["lib/**/*.ts", "lib/**/*.tsx"],
   "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.test.tsx"]
 }
