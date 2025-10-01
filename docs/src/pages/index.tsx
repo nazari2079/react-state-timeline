@@ -7,6 +7,7 @@ import Heading from '@theme/Heading';
 import { useStateTimeline } from '../../../lib';
 
 import styles from './index.module.css';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 function Demo() {
   const { state, setState, timeline, currentIndex, undo, redo, canUndo, canRedo, reset } =
@@ -78,7 +79,7 @@ export default function Home(): ReactNode {
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
           <img
-            src="/img/logo-white.png"
+            src={`${useBaseUrl('/img/logo-white.png')}`}
             alt="Logo"
             style={{
               width: '100%',
