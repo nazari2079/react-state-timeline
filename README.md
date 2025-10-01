@@ -1,69 +1,122 @@
-# React + TypeScript + Vite
+# React State Timeline
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![NPM Version](https://img.shields.io/npm/v/react-state-timeline.svg)](https://www.npmjs.com/package/react-state-timeline)
+[![License](https://img.shields.io/github/license/nazari2079/react-state-timeline)](./LICENSE)
+[![Docs](https://img.shields.io/badge/docs-website-blue)](https://nazari2079.github.io/react-state-timeline/)
 
-Currently, two official plugins are available:
+React hook that tracks your state changes over time, with **undo/redo** and **timeline navigation**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 🔄 Undo / Redo support
+- 🕓 Timeline of state changes
+- 🎯 Go to any state by index
+- ⚡ Simple API with a single hook
+- 📦 Lightweight & dependency-free
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 📦 Installation
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+# with npm
+npm install react-state-timeline
+
+# with yarn
+yarn add react-state-timeline
+
+# with pnpm
+pnpm add react-state-timeline
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🚀 Usage
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```tsx
+import { useStateTimeline } from 'react-state-timeline';
+
+function Counter() {
+  const { state, setState, undo, redo, canUndo, canRedo } = useStateTimeline(0);
+
+  return (
+    <div>
+      <p>Count: {state}</p>
+      <button onClick={() => setState(state + 1)}>+</button>
+      <button onClick={() => setState(state - 1)}>-</button>
+      <button
+        onClick={undo}
+        disabled={!canUndo}
+      >
+        Undo
+      </button>
+      <button
+        onClick={redo}
+        disabled={!canRedo}
+      >
+        Redo
+      </button>
+    </div>
+  );
+}
 ```
+
+---
+
+## 📖 Documentation
+
+Full documentation is available here:  
+👉 [react-state-timeline docs](https://nazari2079.github.io/react-state-timeline/)
+
+---
+
+## 🔧 API
+
+The hook returns:
+
+| Name           | Type                      | Description                                        |
+| -------------- | ------------------------- | -------------------------------------------------- |
+| `state`        | `T`                       | Current state                                      |
+| `setState`     | `(v: T) => void`          | Updates the state and pushes to history            |
+| `timeline`     | `T[]`                     | Array of all states                                |
+| `currentIndex` | `number`                  | Current timeline index                             |
+| `goTo`         | `(index: number) => void` | Jump to a specific state in timeline               |
+| `undo`         | `() => void`              | Go back one state                                  |
+| `redo`         | `() => void`              | Go forward one state                               |
+| `canUndo`      | `boolean`                 | Whether `undo` is available                        |
+| `canRedo`      | `boolean`                 | Whether `redo` is available                        |
+| `reset`        | `() => void`              | Reset to the initial state and clear the timeline. |
+
+---
+
+## 🛠 Development
+
+```bash
+# clone repo
+git clone https://github.com/nazari2079/react-state-timeline.git
+cd react-state-timeline
+
+# install dependencies
+npm install
+
+# run docusaurus
+npm run start:docs
+
+# run tests
+npm test
+```
+
+---
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!  
+Feel free to check [issues page](https://github.com/nazari2079/react-state-timeline/issues).
+
+---
+
+## 📜 License
+
+[MIT](./LICENSE) © 2025 [Mohammad Nazari](https://github.com/nazari2079)
