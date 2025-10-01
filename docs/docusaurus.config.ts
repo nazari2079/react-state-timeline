@@ -9,6 +9,7 @@ import rootPackage from '../package.json' assert { type: 'json' };
 const config: Config = {
   title: 'React State Timeline',
   tagline: rootPackage.description,
+  favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
