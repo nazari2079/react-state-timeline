@@ -77,6 +77,16 @@ export default function Home(): ReactNode {
     <Layout description={siteConfig.tagline}>
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
+          <img
+            src="/img/logo-white.png"
+            alt="Logo"
+            style={{
+              width: '100%',
+              height: 'auto',
+              maxWidth: '350px',
+              marginBottom: '1rem',
+            }}
+          />
           <Heading
             as="h1"
             className="hero__title"
