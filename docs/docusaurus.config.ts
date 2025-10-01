@@ -74,7 +74,8 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
-      copyright: 'Copyright © 2025 react-state-timeline, @nazari2079.',
+      copyright:
+        'Copyright © 2025 react-state-timeline, <a href="https://github.com/nazari2079" target="_blank" rel="noopener noreferrer">@nazari2079</a>.',
     },
     prism: {
       theme: prismThemes.github,
