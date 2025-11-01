@@ -58,7 +58,7 @@ function Demo() {
         <div className={styles.timelineContainer}>
           {timeline.map((item, index) => (
             <div
-              key={item.date.toString() + item.value}
+              key={item.date.getTime()}
               style={{
                 fontWeight: index === currentIndex ? 'bold' : 'normal',
               }}
