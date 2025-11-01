@@ -5,7 +5,19 @@ interface Timeline<T> {
   date: Date;
 }
 
-const useStateTimeline = <T>(initialState: T) => {
+export interface UseStateTimelineReturn<T> {
+  state: T;
+  setState: (newState: T | ((prevState: T) => T)) => void;
+  timeline: Timeline<T>[];
+  currentIndex: number;
+  goTo: (index: number) => void;
+  undo: VoidFunction;
+  redo: VoidFunction;
+  canUndo: boolean;
+  canRedo: boolean;
+  reset: VoidFunction;
+}
+const useStateTimeline = <T>(initialState: T): UseStateTimelineReturn<T> => {
   const [state, setInnerState] = useState(initialState);
   const timelineRef = useRef<Timeline<T>[]>([{ value: initialState, date: new Date() }]);
   const indexRef = useRef(0);
