@@ -48,6 +48,7 @@ const StateTimelineDevTools = <T,>(props: StateTimelineDevToolsProps<T>) => {
         onClick={() => setOpen((p) => !p)}
         className={styles.toggleButton}
         ref={buttonRef}
+        data-testid="toggleTimelinePanel"
       >
         React State Timeline
       </button>
@@ -78,6 +79,7 @@ const StateTimelineDevTools = <T,>(props: StateTimelineDevToolsProps<T>) => {
                 className={`${styles.item} ${
                   i === currentIndex ? styles.active : ''
                 } ${typeof goTo !== 'function' ? styles.disabled : ''}`}
+                data-testid="timelineItem"
               >
                 <pre className={styles.value}>
                   <code>{JSON.stringify(item.value, null, 2)}</code>
