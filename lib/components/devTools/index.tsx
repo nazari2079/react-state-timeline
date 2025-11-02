@@ -13,7 +13,7 @@ const StateTimelineDevTools = <T,>(props: StateTimelineDevToolsProps<T>) => {
   const panelRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
-  function handleCopyValue(e: React.MouseEvent<HTMLButtonElement, MouseEvent>, value: T) {
+  function handleCopyValue(e: React.MouseEvent<HTMLElement>, value: T) {
     e.stopPropagation();
 
     navigator.clipboard.writeText(JSON.stringify(value));
@@ -81,12 +81,13 @@ const StateTimelineDevTools = <T,>(props: StateTimelineDevToolsProps<T>) => {
               >
                 <pre className={styles.value}>
                   <code>{JSON.stringify(item.value, null, 2)}</code>
-                  <button
+                  <span
+                    role="button"
                     className={styles.copyButton}
                     onClick={(e) => handleCopyValue(e, item.value)}
                   >
                     Copy
-                  </button>
+                  </span>
                 </pre>
                 <div className={`${styles.time} ${i === currentIndex ? styles.activeTime : ''}`}>
                   {item.date.toLocaleTimeString()}
