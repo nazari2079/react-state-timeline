@@ -12,7 +12,7 @@
     "start:docs": "cd docs && yarn start",
     "deploy:docs": "cd docs && yarn build && gh-pages -d build",
     "test": "vitest",
-    "build": "rm -rf dist && tsc && vite build",
+    "build": "vitest --run && rm -rf dist && tsc && vite build",
     "lint": "eslint --fix lib/**/* --report-unused-disable-directives --max-warnings 0 --no-warn-ignored -f codeframe",
     "format": "prettier lib/**/* --write --ignore-unknown",
     "preview": "vite preview",
