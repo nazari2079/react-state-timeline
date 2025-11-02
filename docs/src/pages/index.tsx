@@ -4,8 +4,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
-import { useStateTimeline } from '../../../lib';
-import StateTimelineDevTools from '../../../lib/components/devTools';
+import { StateTimelineDevTools, useStateTimeline } from '../../../lib';
 import styles from './index.module.css';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
