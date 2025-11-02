@@ -13,6 +13,12 @@ const StateTimelineDevTools = <T,>(props: StateTimelineDevToolsProps<T>) => {
   const panelRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
+  function handleCopyValue(e: React.MouseEvent<HTMLButtonElement, MouseEvent>, value: T) {
+    e.stopPropagation();
+
+    navigator.clipboard.writeText(JSON.stringify(value));
+  }
+
   function handleClickOutside(e: MouseEvent) {
     const target = e.target as Node;
     if (
@@ -74,7 +80,13 @@ const StateTimelineDevTools = <T,>(props: StateTimelineDevToolsProps<T>) => {
                 } ${typeof goTo !== 'function' ? styles.disabled : ''}`}
               >
                 <pre className={styles.value}>
-                  <code className={styles.value}>{JSON.stringify(item.value, null, 2)}</code>
+                  <code>{JSON.stringify(item.value, null, 2)}</code>
+                  <button
+                    className={styles.copyButton}
+                    onClick={(e) => handleCopyValue(e, item.value)}
+                  >
+                    Copy
+                  </button>
                 </pre>
                 <div className={`${styles.time} ${i === currentIndex ? styles.activeTime : ''}`}>
                   {item.date.toLocaleTimeString()}

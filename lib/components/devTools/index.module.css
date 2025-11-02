@@ -88,6 +88,7 @@
 }
 
 .value {
+  position: relative;
   padding: 8px;
   margin-bottom: 8px;
   background-color: rgba(255, 255, 255, 0.1);
@@ -100,6 +101,32 @@
     'Liberation Mono',
     'Courier New',
     monospace;
+}
+
+.copyButton {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  opacity: 0;
+  padding: 0.5rem 0.75rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  transition:
+    opacity,
+    background-color 0.2s ease;
+  color: black;
+  background-color: white;
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+
+.copyButton:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.item:has(:hover) .copyButton {
+  opacity: 1;
 }
 
 .value code {
