@@ -1,0 +1,14 @@
+.husky
+docs
+lib
+node_modules
+.czrc
+.gitignore
+.lintstagedrc
+.prettierrc.json
+commitlint.config.cjs
+eslint.config.js
+tsconfig.json
+vite.config.ts
+vitest.config.ts
+yarn.lock
