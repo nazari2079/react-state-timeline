@@ -8,14 +8,20 @@ import { useStateTimeline } from '../../../lib';
 
 import styles from './index.module.css';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import StateTimelineDevTools from '../../../lib/components/devTools';
 
 function Demo() {
-  const { state, setState, timeline, currentIndex, undo, redo, canUndo, canRedo, reset } =
+  const { state, setState, timeline, currentIndex, undo, redo, canUndo, canRedo, goTo, reset } =
     useStateTimeline(0);
 
   return (
     <div style={{ padding: '2rem', textAlign: 'center' }}>
       <h1>Demo</h1>
+      <StateTimelineDevTools
+        timeline={timeline}
+        currentIndex={currentIndex}
+        goTo={goTo}
+      />
 
       <p>Current state: {state}</p>
       <div className={styles.exmapleButtonsContainer}>
