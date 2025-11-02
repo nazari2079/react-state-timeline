@@ -3,6 +3,7 @@ import dts from 'vite-plugin-dts';
 import react from '@vitejs/plugin-react';
 import { readdirSync, existsSync, statSync } from 'fs';
 import { resolve, sep } from 'node:path';
+import { libInjectCss } from 'vite-plugin-lib-inject-css';
 
 import { name, peerDependencies } from './package.json';
 
@@ -44,6 +45,7 @@ export default defineConfig({
       tsconfigPath: './tsconfig.json',
       exclude: ['**/*.test.ts', '**/*.test.tsx'],
     }),
+    libInjectCss(),
   ],
   build: {
     target: 'esnext',
@@ -59,6 +61,9 @@ export default defineConfig({
     },
     rollupOptions: {
       external: ['react/jsx-runtime', ...Object.keys(peerDependencies)],
+      output: {
+        assetFileNames: 'components/[name]/index[extname]',
+      },
     },
   },
 });
