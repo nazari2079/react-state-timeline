@@ -65,7 +65,7 @@
   display: block;
   width: 100%;
   text-align: left;
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem;
   font-size: 0.75rem;
   background: none;
   border: none;
@@ -89,8 +89,8 @@
 
 .value {
   position: relative;
-  padding: 8px;
-  margin-bottom: 8px;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 0.5rem;
   font:
