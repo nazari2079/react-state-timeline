@@ -19,6 +19,7 @@ It provides an easy way to implement **undo, redo, and timeline navigation** for
 - 🔄 Reset back to the initial state
 - ⏱️ Each state is timestamped with creation time
 - ⚡ Fully typed with TypeScript
+- 🧠 Built-in DevTools panel
 
 ---
 
