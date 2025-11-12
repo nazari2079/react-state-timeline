@@ -1,8 +1,18 @@
-# React State Timeline
+<div align="center">
+  <a href="https://nazari2079.github.io/react-state-timeline/">
+    <img src="https://raw.githubusercontent.com/nazari2079/react-state-timeline/refs/heads/gh-pages/img/banner.png" alt="React State Timeline" />
+  </a>
+  <br />
+  <br />
+</div>
 
+<div align='center'>
+  
 [![NPM Version](https://img.shields.io/npm/v/react-state-timeline.svg)](https://www.npmjs.com/package/react-state-timeline)
 [![License](https://img.shields.io/github/license/nazari2079/react-state-timeline)](./LICENSE)
 [![Docs](https://img.shields.io/badge/docs-website-blue)](https://nazari2079.github.io/react-state-timeline/)
+  
+</div>
 
 React hook that tracks your state changes over time, with **undo/redo** and **timeline navigation**.
 
