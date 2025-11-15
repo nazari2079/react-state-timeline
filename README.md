@@ -11,6 +11,8 @@
 [![NPM Version](https://img.shields.io/npm/v/react-state-timeline.svg)](https://www.npmjs.com/package/react-state-timeline)
 [![License](https://img.shields.io/github/license/nazari2079/react-state-timeline)](./LICENSE)
 [![Docs](https://img.shields.io/badge/docs-website-blue)](https://nazari2079.github.io/react-state-timeline/)
+[![react-state-timeline](https://img.shields.io/github/stars/nazari2079/react-state-timeline?style=social)](https://github.com/nazari2079/react-state-timeline)
+
   
 </div>
 
